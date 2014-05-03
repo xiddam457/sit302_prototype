@@ -1,0 +1,14 @@
+﻿@using sit302_prototype.Models.Impl;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<h2>Select Course</h2>
+
+<form action="/plannerwizard/selectmajor" method="post">
+    @Html.DropDownList("course", new SelectList(ViewBag.courses, "courseCode", "courseName"))
+    <input type="submit" value="Submit" />
+</form>
+

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "SelectMajor";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<h2>SelectMajor</h2>
+
+<form action="/plannerwizard/showgrid" method="post">
+    @Html.DropDownList("major", new SelectList(ViewBag.majors, "majorCode", "majorName"))
+    <input type="submit" value="Submit" />
+</form>
