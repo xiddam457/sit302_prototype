@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using sit302_prototype.Models.DAO;
 using sit302_prototype.Models.DAO.Impl;
 using sit302_prototype.Models.Impl;
 using sit302_prototype.Models.Manager;

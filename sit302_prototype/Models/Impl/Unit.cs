@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -11,9 +12,7 @@ namespace sit302_prototype.Models.Impl {
         public bool isCoreUnit { get; set; }
         public int level { get; set; }
 
-        public virtual ICollection<Unit> prerequisites { get; set; }
-
-        public virtual ICollection<Unit> corequisites { get; set; }
+        public virtual ICollection<Requisite> requisites { get; set; }
 
         public virtual ICollection<Offered> offered { get; set; }
 
@@ -26,22 +25,6 @@ namespace sit302_prototype.Models.Impl {
             this.worthCP = worthCP;
             this.isCoreUnit = isCore;
             this.level = level;
-        }
-
-        public void addPrereq(Unit unit) {
-            this.prerequisites.Add(unit);
-        }
-
-        public void removePrereq(Unit unit) {
-            this.prerequisites.Remove(unit);
-        }
-
-        public void addCoreq(Unit unit) {
-            this.corequisites.Add(unit);
-        }
-
-        public void removeCoreq(Unit unit) {
-            this.corequisites.Remove(unit);
         }
 
         public void addOfferedTime(Offered offered) {

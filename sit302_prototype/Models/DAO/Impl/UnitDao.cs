@@ -25,7 +25,9 @@ namespace sit302_prototype.Models.DAO.Impl {
         }
 
         public List<Unit> getAllUnitsForMajor(Major major) {
-            return DatabaseContext.getInstance().unitContext.Where(i => major.units.Contains(i)).ToList();
+            return (from unit in DatabaseContext.getInstance().unitContext.ToList()
+                         where major.units.Contains(unit)
+                         select unit).ToList();
         }
 
         public List<Unit> getAllCoreUnits() {

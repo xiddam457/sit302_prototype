@@ -1,8 +1,88 @@
-﻿@{
+﻿@using sit302_prototype.Models.Impl;
+
+@{
     ViewBag.Title = "ShowGrid";
     Layout = "~/Views/Layout/_Layout.cshtml";
     List<Unit> units = ViewBag.units;
     bool firstrun = true;
 }
+<style type="text/css">
+    td
+    {
+        height: 50px;
+        width: 50px;
+    }
+</style>
 
 <h2>ShowGrid</h2>
+
+<table border="1">
+    <tr>
+    @for (int i = 0; i < units.Count; i++ ) {
+        if(i % 5 == 0) {
+            @Html.Raw("</tr>")
+            @Html.Raw("<tr>")
+        } else {
+            <td class="row" draggable="true">@units[i].unitName</td>
+        }
+    }
+    @Html.Raw("</tr>")
+</table>
+
+<script type="text/javascript">
+    function handleDragStart(e) {
+        dragSrcEl = this;
+
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+
+    function handleDragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+
+        e.dataTransfer.dropEffect = 'move';
+
+        return false;
+    }
+
+    function handleDragEnter(e) {
+        this.classList.add('over');
+    }
+
+    function handleDragLeave(e) {
+        this.classList.remove('over');
+    }
+
+    function handleDrop(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+
+        if (dragSrcEl != this) {
+            dragSrcEl.innerHTML = this.innerHTML;
+            this.innerHTML = e.dataTransfer.getData('text/html');
+        }
+
+        return false;
+    }
+
+    function handleDragEnd(e) {
+        [].forEach.call(items, function (row) {
+            row.classList.remove('over');
+        });
+    }
+
+    var items = document.querySelectorAll('.row');
+    [].forEach.call(items, function (row) {
+        row.addEventListener('dragstart', handleDragStart, false);
+        row.addEventListener('dragenter', handleDragEnter, false);
+        row.addEventListener('dragover', handleDragOver, false);
+        row.addEventListener('dragleave', handleDragLeave, false);
+        row.addEventListener('drop', handleDrop, false);
+        row.addEventListener('dragend', handleDragEnd, false);
+    });
+
+
+</script>

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sit302_prototype", "sit302_prototype\sit302_prototype.csproj", "{6216EE30-E341-443F-9A83-00E280C4E804}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{C0C9AAF6-D373-448E-A096-ADD6FA16ACFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{6216EE30-E341-443F-9A83-00E280C4E804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6216EE30-E341-443F-9A83-00E280C4E804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6216EE30-E341-443F-9A83-00E280C4E804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C9AAF6-D373-448E-A096-ADD6FA16ACFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C9AAF6-D373-448E-A096-ADD6FA16ACFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C9AAF6-D373-448E-A096-ADD6FA16ACFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C9AAF6-D373-448E-A096-ADD6FA16ACFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
